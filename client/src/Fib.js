@@ -54,15 +54,15 @@ class Fib extends Component {
 
   isNumber(str) {
     if(parseInt(str) < 0){
-      return 0;
+      return 1;
     }
     if (str.trim() === '') {
-      return 0;
+      return 1;
     }
     if(!isNaN(str))
       return(str)
     else
-      return 0;
+      return 1;
   }
 
   render() {
