@@ -56,6 +56,7 @@ class Fib extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+          <h3>Fibonacci Calculator</h3>
           <label>Enter your index:</label>
           <input
             value={this.state.index}
