@@ -9,7 +9,7 @@ function App() {
     <Router>
     <div className="App">
       <header className="App-header">
-        <h2><b>React and Dockers</b></h2>
+        <h2><b>React, Dockers and AWS</b></h2>
         <img src={logo} className="App-logo" alt="logo" />
         <a
           className="App-link"
