@@ -56,8 +56,10 @@ class Fib extends Component {
     if (str.trim() === '') {
       return 0;
     }
-  
-    return !isNaN(str);
+    if(!isNaN(str))
+      return(str)
+    else
+      return 0;
   }
 
   render() {
