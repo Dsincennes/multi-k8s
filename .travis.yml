@@ -1,0 +1,23 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t dsincennes/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true dsincennes/react-test npm test
+
+after_success:
+  - docker build -t dsincennes/multi-client ./client
+  - docker build -t dsincennes/multi-nginx ./nginx
+  - docker build -t dsincennes/multi-server ./server
+  - docker build -t dsincennes/multi-worker ./worker
+
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  
+  - docker push dsincennes/multi-client
+  - docker push dsincennes/multi-nginx
+  - docker push dsincennes/multi-server
+  - docker push dsincennes/multi-worker
