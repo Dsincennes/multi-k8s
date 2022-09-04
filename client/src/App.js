@@ -17,7 +17,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Best player in valorant!!
+          Best player in valorant!
         </a>
         <p></p>
         <a
