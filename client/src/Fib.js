@@ -52,14 +52,23 @@ class Fib extends Component {
     return entries;
   }
 
+  isNumber(str) {
+    if (str.trim() === '') {
+      return 0;
+    }
+  
+    return !isNaN(str);
+  }
+
   render() {
     return (
+      
       <div>
         <form onSubmit={this.handleSubmit}>
           <h3>Fibonacci Calculator</h3>
           <label>Enter your index:</label>
           <input
-            value={this.state.index}
+            value={this.isNumber(this.state.index)}
             onChange={(event) => this.setState({ index: event.target.value })}
           />
           <button>Submit</button>
