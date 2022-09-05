@@ -52,19 +52,6 @@ class Fib extends Component {
     return entries;
   }
 
-  isNumber(str) {
-    if(parseInt(str) < 0){
-      return 1;
-    }
-    if (str.trim() === '') {
-      return 1;
-    }
-    if(!isNaN(str))
-      return(str)
-    else
-      return 1;
-  }
-
   render() {
     return (
       
@@ -74,7 +61,8 @@ class Fib extends Component {
           <label>Enter your index:</label>
           <input
             value={this.state.index}
-            onChange={(event) => this.setState({ index: this.isNumber(this.state.index) })}
+            onChange={(event) => this.setState({ index: event.target.value })}
+
           />
           <button>Submit</button>
         </form>
