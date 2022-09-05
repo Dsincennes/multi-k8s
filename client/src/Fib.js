@@ -70,11 +70,11 @@ class Fib extends Component {
       
       <div>
         <form onSubmit={this.handleSubmit}>
-          <h3>Fibonacci Calculator</h3>
+          <h3>Fibonacci Calculator v2</h3>
           <label>Enter your index:</label>
           <input
-            value={this.isNumber(this.state.index)}
-            onChange={(event) => this.setState({ index: event.target.value })}
+            value={this.state.index}
+            onChange={(event) => this.setState({ index: this.isNumber(this.state.index) })}
           />
           <button>Submit</button>
         </form>
